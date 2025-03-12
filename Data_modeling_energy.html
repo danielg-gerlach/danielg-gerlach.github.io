@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Data Modeling: Energy Supplier Customer Management Data Model</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+							<center>
+								<a href="index.html" class="logo">
+									<font size = "6"><span class="symbol"><span class="title">Daniel Gerlach</span></font></span>
+								</a>
+							</center>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<h2>Menu</h2>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+							<li><a href="about_me.html">About Me</a></li>
+							<li><a href="da_project.html">Analysis & Visualisation of Manufacturing Data</a></li>
+							<li><a href="wms.html">Relational Database Design</a></li>
+							<li><a href="dwh.html">Data Architecture</a></li>
+					</ul>
+				</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Data Modeling for Energy Supplier Operations</h1>
+							<p>
+								In the energy sector, managing data effectively is critical for delivering seamless operations and exceptional customer satisfaction. 
+								<b>Relational databases</b> offer a structured and reliable way to organize key areas such as customer management, energy usage tracking, 
+								billing, and payments. They provide the foundation for accuracy, scalability, and the ability to adapt to changing business 
+								requirements in a dynamic industry.
+							  </p>
+							  <p>
+								For this project, I designed and implemented a relational database using <strong>operational data modeling</strong>, specifically tailored 
+								to an energy supplier’s needs. The database focuses on streamlining the management of customer accounts, contracts, and meter readings, 
+								ensuring data consistency and operational efficiency. By addressing the core challenges of energy data management, this project demonstrates 
+								how a well-structured database can optimize workflows and enable better decision-making.
+							  </p>
+							  <p>
+								This implementation not only showcases the power of relational databases in solving real-world business problems but also highlights 
+								technical skills in data modeling and SQL development. It’s a great example of how databases can deliver value and drive success 
+								in the energy industry.
+							  </p>
+							  <p>
+								<a href="https://github.com/danielg-gerlach/energy_supplier_db" target="_blank">Visit my GitHub-Repository</a> 
+							</p>
+							
+							<!--
+							<p><strong>GitHub Repo:</strong> <a href="https://github.com/danielg-gerlach/energy_supplier_db" target="_blank">https://github.com/danielg-gerlach/energy_supplier_db</a></p>
+							
+							<h2>Overview</h2>
+							<p>
+								This project entails the design and implementation of a comprehensive relational database for an energy supplier company using MySQL. The primary objective is to efficiently manage critical business operations, including customer management, billing, contracts, and energy consumption tracking. By leveraging best practices in data modeling and SQL development, the database ensures data integrity, scalability, and adaptability to evolving business needs.
+							</p>
+							<Embed the Data Model Image Here 
+							 <p>
+								<img src="images/data_model_energy.png" alt="Energy Supplier Entity-Relationship Diagram">
+							 </p>
+    						
+							<h2>Objectives</h2>
+							<ul>
+								<li><strong>Efficient Data Management:</strong> Streamline the storage and retrieval of customer, account, contract, meter, billing, and payment data.</li>
+								<li><strong>Data Integrity & Consistency:</strong> Implement robust constraints and relationships to maintain accurate and reliable data.</li>
+								<li><strong>Scalability:</strong> Design a database structure that can handle growing volumes of data, particularly time-series meter readings.</li>
+								<li><strong>Operational Efficiency:</strong> Facilitate seamless operational workflows such as billing generation, payment processing, and contract management.</li>
+								<li><strong>Future-Proofing:</strong> Ensure the database can adapt to future business requirements and integrations without significant overhauls.</li>
+							</ul>
+							
+							<h2>Design Approach</h2>
+							
+							<h3>1. <strong>Requirement Analysis</strong></h3>
+							<ul>
+								<li>Identified key entities: Customer, Address, Account, Product, Tariff, Contract, Bill, Bill Item, Payment.</li>
+								<li>Determined relationships and dependencies among entities to ensure a normalized schema.</li>
+								<li>Focused on essential functionalities to avoid unnecessary complexity.</li>
+							</ul>
+							
+							<h3>2. <strong>Data Modeling</strong></h3>
+							<ul>
+								<li>Adopted <strong>Third Normal Form (3NF)</strong> to eliminate redundancy and ensure data integrity.</li>
+								<li>Utilized <strong>surrogate keys</strong> (<code>AUTO_INCREMENT</code> primary keys) for indexing and relationship management.</li>
+								<li>Defined <strong>foreign key constraints</strong> to enforce referential integrity between related tables.</li>
+							</ul>
+							
+							<h3>3. <strong>Schema Design</strong></h3>
+							<ul>
+								<li>Structured the database to cover core business operations:
+									<ul>
+										<li><strong>Customer Management:</strong> Storing customer details and their associated addresses.</li>
+										<li><strong>Account & Contract Management:</strong> Linking customers to their accounts and contracts, specifying products and tariffs.</li>
+										<li><strong>Billing & Payments:</strong> Managing bills, bill items, and customer payments.</li>
+										<li>Ensured <strong>scalability</strong> by optimizing table structures and indexing strategies to handle large datasets.</li>
+									</ul>
+								</li>
+							</ul>
+							
+							<h2>Key Features</h2>
+							
+							<h3>1. <strong>Defined Relationships</strong></h3>
+							<ul>
+								<li><strong>Foreign Keys:</strong> Establish clear links between tables (e.g., <code>customer</code> to <code>address</code>, <code>account</code> to <code>customer</code>).</li>
+								<li><strong>Referential Integrity:</strong> Ensures that related records are consistent and valid across the database.</li>
+							</ul>
+							
+							<h3>2. <strong>Normalized Schema</strong></h3>
+							<ul>
+								<li><strong>3NF Compliance:</strong> Reduces data redundancy and improves data integrity.</li>
+								<li><strong>Logical Grouping:</strong> Separates distinct entities into individual tables for better organization and maintenance.</li>
+							</ul>
+							
+							<h3>3. <strong>Data Integrity Constraints</strong></h3>
+							<ul>
+								<li><strong>Primary Keys:</strong> Unique identifiers for each table to ensure entity uniqueness.</li>
+								<li><strong>Foreign Keys:</strong> Maintain relationships and ensure valid references.</li>
+								<li><strong>ENUM Types:</strong> Restrict values for specific columns to predefined options, enhancing data validity.</li>
+							</ul>
+							
+							<h3>4. <strong>Scalability and Performance Optimization</strong></h3>
+							<ul>
+								<li><strong>Indexing:</strong> Applied indexes on frequently queried columns to enhance query performance.</li>
+								<li><strong>Efficient Data Types:</strong> Chose appropriate data types to balance storage efficiency and performance.</li>
+							</ul>
+							
+							<h3>5. <strong>Robust Billing and Payment System</strong></h3>
+							<ul>
+								<li><strong>Bill and Bill Item Tables:</strong> Capture detailed billing information and line items for precise invoicing.</li>
+								<li><strong>Payment Tracking:</strong> Record and manage customer payments with necessary details for reconciliation.</li>
+							</ul>
+							
+							<h2>Tools and Technologies</h2>
+							<ul>
+								<li><strong>Database Management System:</strong> MySQL (MySQL Workbench)</li>
+								<li><strong>Data Modeling:</strong> Entity-Relationship Diagrams (ERD) for visual schema design</li>
+								<li><strong>SQL Development:</strong> SQL for database creation and management in DataGrip</li>
+								<li><strong>Testing Tools:</strong> DataGrip for executing and validating SQL scripts</li>
+							</ul>
+							
+							<h2>SQL Implementation Steps</h2>
+							
+							<h3>1. <strong>Database Creation</strong></h3>
+							<ul>
+								<li>Initiated the project by creating the <code>energy_supplier_db</code> database with appropriate character encoding.</li>
+							</ul>
+							
+							<h3>2. <strong>Table Definitions</strong></h3>
+							<ul>
+								<li>Defined tables for <code>address</code>, <code>customer</code>, <code>product</code>, <code>account</code>, <code>contract</code>, <code>bill</code>, <code>bill_item</code>, and <code>payment</code> with relevant columns and constraints.</li>
+							</ul>
+							
+							<h3>3. <strong>Establishing Relationships</strong></h3>
+							<ul>
+								<li>Implemented foreign key constraints to link related tables, ensuring referential integrity.</li>
+							</ul>
+							
+							<h3>4. <strong>Applying Constraints and Indexing</strong></h3>
+							<ul>
+								<li>Added <code>NOT NULL</code>, <code>UNIQUE</code>, and <code>DEFAULT</code> constraints to enforce data validity.</li>
+								<li>Created indexes on key columns to optimize query performance.</li>
+							</ul>
+							
+							<h3>5. <strong>Testing and Validation</strong></h3>
+							<ul>
+								<li>Executed the SQL script in a controlled environment to identify and rectify any issues.</li>
+								<li>Inserted sample data to verify the functionality of constraints and relationships.</li>
+								<li>Conducted query performance testing to ensure the database meets scalability requirements.</li>
+							</ul>
+							
+							<h2>Testing and Validation</h2>
+							<ul>
+								<li><strong>Syntax Verification:</strong> Ensured all SQL statements were free of syntax errors.</li>
+								<li><strong>Constraint Enforcement:</strong> Tested foreign key constraints by attempting invalid data insertions.</li>
+								<li><strong>Data Integrity:</strong> Verified that relationships between tables maintained consistent and accurate data.</li>
+								<li><strong>Performance Testing:</strong> Assessed query execution times to confirm that indexing strategies were effective.</li>
+							</ul>
+
+							<h2>Conclusion</h2>
+							<p>
+								The Energy Supplier Data Modeling Project delivers a relational database tailored to the basic operational needs of an energy supplier company. By designing a normalized schema with relationships and enforcing data integrity through constraints, the project ensures reliable and efficient data management. This implementation not only addresses immediate business challenges but also lays a solid foundation for future growth and adaptability.
+							</p>
+							-->
+							<!-- Code-Container beginnt hier -->
+							<div class="code-container">
+								<pre class="code-snippet">
+					<span class="comment">// This is a command!</span>
+					<span class="keyword">function</span> <span class="function-name">haveFun</span>():
+						<span class="keyword">return</span> <span class="string">"Have Fun!"</span>
+								</pre>
+							</div>
+							<!-- Code-Container endet hier -->
+							
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Socials</h2>
+								<ul class="icons">
+									<li><a href="https://www.linkedin.com/in/danielg-gerlach" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/danielg-gerlach" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy;Daniel Gerlach</li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
